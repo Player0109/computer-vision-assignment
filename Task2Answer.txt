@@ -1,0 +1,19 @@
+Video consists of Images + audio. So for video tagging it necessary to analyse both images as well as audio. 
+
+Visual Model – I
+For each frame(image) of the video we use object detection models to detect objects in the images. We keep the count for each object detected and the time for which they appeared in the video.  For this task we need to us a OBJECT DETECTION Model.
+
+Visual Model – II
+As we know that text is also very important for video tagging. So we need to detect the text in the frames(images) of the videos. This task can be completed using a TEXT DETECTION model from images.
+
+Audio Model – I
+The Audio part of the Video is also very important for video tagging. So to analyse the audio we have to convert the audio to text. For this we need to use a SPEECH TO TEXT conversion model.
+
+FINAL MODEL
+Now using the outputs of the above 3 models we can create a new model, which takes the output of the above 3 models as input and outputs features which will be used for Video Tagging.
+
+
+Challenges
+One of the most important challenge is time and resources because the analysing each frame of the video is very time-consuming process and also a lot of resources are needed.
+To solve this problem, we can skip some frames. Example – If a video has 30 frames per second. Then we can take one frame out of every 5 frames. This means we can take frame number 0,5,10,15,20,25,30 for our analysis.
+
